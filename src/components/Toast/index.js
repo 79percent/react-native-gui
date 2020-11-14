@@ -10,7 +10,7 @@ import {
 import PropTypes from "prop-types";
 
 const ViewPropTypes = RNViewPropTypes || View.propTypes;
-export const DURATION = {
+const DURATION = {
   LENGTH_SHORT: 500,
   FOREVER: 0,
 };
@@ -148,4 +148,9 @@ Toast.defaultProps = {
   fadeInDuration: 500,
   fadeOutDuration: 500,
   opacity: 1,
+};
+
+Toast.DURATION = {
+  LENGTH_SHORT: 500,
+  FOREVER: 0,
 };
