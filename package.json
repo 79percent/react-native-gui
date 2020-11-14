@@ -11,10 +11,6 @@
   ],
   "author": "",
   "license": "",
-  "peerDependencies": {
-    "react": "16.0.0",
-    "react-native": "0.51.0"
-  },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "eslint": "^4.15.0",

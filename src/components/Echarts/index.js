@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { WebView, View } from 'react-native';
-import { toString } from './utils';
-import htmlFile from './index.html';
-import htmlScript from './html.str';
-import echartsStr from './echarts.min.str';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { WebView, View } from "react-native";
+import { toString } from "./utils";
+import htmlFile from "./index.html";
+import htmlScript from "./html.str";
+import echartsStr from "./echarts.min.str";
 
 export default class App extends Component {
   static propTypes = {
@@ -38,12 +38,13 @@ export default class App extends Component {
     return (
       <View style={{ flex: 1 }}>
         <WebView
-          ref={ref => {
+          ref={(ref) => {
             this.chart = ref;
           }}
           style={[{ flex: 1 }, style]}
           scalesPageToFit={true}
           source={htmlFile}
+          // source={{ uri: "https://79percent.github.io/sf-echarts" }}
         />
       </View>
     );
