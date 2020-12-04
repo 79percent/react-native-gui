@@ -1,13 +1,13 @@
 
-# react-native-gui
+# react-native-ui
 
 ## Getting started
 
-`$ npm i https://github.com/79percent/react-native-gui.git --save`
+`$ npm i https://github.com/79percent/react-native-ui.git --save`
 
 ## Usage
 ```javascript
-import { Test } from 'react-native-gui';
+import { Test } from 'react-native-ui';
 
 render(){
   return(

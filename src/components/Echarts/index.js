@@ -1,15 +1,13 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { WebView, View } from "react-native";
-import { toString } from "./utils";
-import htmlFile from "./index.html";
-import htmlScript from "./html.str";
-import echartsStr from "./echarts.min.str";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { View, Platform } from 'react-native';
+import { WebView } from 'react-native-webview';
+import { toString } from './utils';
 
 export default class App extends Component {
   static propTypes = {
-    style: PropTypes.object.isRequired,
-    option: PropTypes.object.isRequired,
+    style: PropTypes.object,
+    option: PropTypes.object,
   };
 
   state = {};
@@ -35,16 +33,19 @@ export default class App extends Component {
 
   render() {
     const { style } = this.props;
+    const baseUrl =
+      Platform.OS === 'ios'
+        ? { uri: './echarts/index.html' }
+        : { uri: 'file:///android_asset/pages/echarts/index.html' };
     return (
       <View style={{ flex: 1 }}>
         <WebView
-          ref={(ref) => {
+          ref={ref => {
             this.chart = ref;
           }}
           style={[{ flex: 1 }, style]}
           scalesPageToFit={true}
-          source={htmlFile}
-          // source={{ uri: "https://79percent.github.io/sf-echarts" }}
+          source={baseUrl}
         />
       </View>
     );
